@@ -8,10 +8,10 @@ const bodyParser = require('body-parser');
 
 // SETTINGS
 
-app.use(express.static('public'));
 app.set('view engine', 'ejs');
-ejs.delimiter = '?';
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
+ejs.delimiter = '?';
 
 // CONSTANTS
 
