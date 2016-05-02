@@ -1,0 +1,25 @@
+{
+  "name": "campsite-reviews",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dargaCode/UdemyCampsiteReviews.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dargaCode/UdemyCampsiteReviews/issues"
+  },
+  "homepage": "https://github.com/dargaCode/UdemyCampsiteReviews#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4"
+  }
+}
