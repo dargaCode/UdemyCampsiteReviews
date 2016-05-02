@@ -1,3 +1,4 @@
+'use strict'; // so let will work
 
 // DEPENDENCIES
 
@@ -28,4 +29,20 @@ app.listen(process.env.port || PORT_NUM, function() {
 
 app.get('/', function(req, res) {
   res.render('landing');
+});
+
+app.get('/campsites', function(req, res) {
+
+  let campsites = [
+    {name:'Campsite1', state: 'state1'},
+    {name:'Campsite2', state: 'state2'},
+    {name:'Campsite3', state: 'state3'},
+    {name:'Campsite4', state: 'state4'},
+    {name:'Campsite5', state: 'state5'},
+    {name:'Campsite6', state: 'state6'}
+  ];
+
+  res.render('campsites', {
+    campsites: campsites
+  });
 });
