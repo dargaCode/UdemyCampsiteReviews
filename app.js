@@ -27,5 +27,5 @@ app.listen(process.env.port || PORT_NUM, function() {
 // ROUTES
 
 app.get('/', function(req, res) {
-  res.send('Campsite Reviews');
+  res.render('landing');
 });
