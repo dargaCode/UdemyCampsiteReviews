@@ -11,12 +11,24 @@
     </p>
   </header>
 
-  <? campsites.forEach(function(site) { ?>
-    <div>
-      <h4><?= site.name ?></h4>
-      <img src="<?= site.imageURL ?>">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3>Our Most Popular Campsites</h3>
     </div>
-  <? }); ?>
+  </div>
+
+  <div class="row" style="display: flex; flex-wrap: wrap;">
+    <? campsites.forEach(function(site) { ?>
+      <div class="col-md-4 col-sm-6">
+        <div class="thumbnail">
+          <img src="<?= site.imageURL ?>">
+          <div class="caption">
+            <h4><?= site.name ?></h4>
+          </div>
+        </div>
+      </div>
+    <? }); ?>
+  </div>
 
   <a href="/">Home</a>
 
