@@ -47,3 +47,7 @@ app.get('/campsites', function(req, res) {
     campsites: campsites
   });
 });
+
+app.get('/campsites/new', function(req, res) {
+  res.render('new');
+});
