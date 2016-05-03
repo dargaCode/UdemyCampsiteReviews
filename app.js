@@ -19,6 +19,17 @@ ejs.delimiter = '?';
 const PORT_NUM = 3000;
 const SERVER_START_MSG = 'Serving Campsite Reviews on port ' + PORT_NUM;
 
+// VARIABLES
+
+let campsites = [
+  {name:'Campsite1', photo: 'https://farm3.staticflickr.com/2259/2182093741_164dc44a24.jpg'},
+  {name:'Campsite2', photo: 'https://farm2.staticflickr.com/1086/882244782_d067df2717.jpg'},
+  {name:'Campsite3', photo: 'https://farm8.staticflickr.com/7439/10131284273_c1728fb490.jpg'},
+  {name:'Campsite4', photo: 'https://farm4.staticflickr.com/3273/2602356334_20fbb23543.jpg'},
+  {name:'Campsite5', photo: 'https://farm1.staticflickr.com/112/316612921_f23683ca9d.jpg'},
+  {name:'Campsite6', photo: 'https://farm3.staticflickr.com/2713/4161240714_a296608148.jpg'}
+];
+
 //SERVER
 
 app.listen(process.env.PORT || PORT_NUM, function() {
@@ -32,16 +43,6 @@ app.get('/', function(req, res) {
 });
 
 app.get('/campsites', function(req, res) {
-
-  let campsites = [
-    {name:'Campsite1', photo: 'https://farm3.staticflickr.com/2259/2182093741_164dc44a24.jpg'},
-    {name:'Campsite2', photo: 'https://farm2.staticflickr.com/1086/882244782_d067df2717.jpg'},
-    {name:'Campsite3', photo: 'https://farm8.staticflickr.com/7439/10131284273_c1728fb490.jpg'},
-    {name:'Campsite4', photo: 'https://farm4.staticflickr.com/3273/2602356334_20fbb23543.jpg'},
-    {name:'Campsite5', photo: 'https://farm1.staticflickr.com/112/316612921_f23683ca9d.jpg'},
-    {name:'Campsite6', photo: 'https://farm3.staticflickr.com/2713/4161240714_a296608148.jpg'}
-  ];
-
   res.render('campsites', {
     campsites: campsites
   });
