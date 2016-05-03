@@ -48,6 +48,16 @@ app.get('/campsites', function(req, res) {
   });
 });
 
+app.post('/campsites', function(req, res) {
+  const name = req.body.name;
+  const imageURL = req.body.imageURL;
+  campsites.push({
+    name: name,
+    imageURL: imageURL
+  });
+  res.redirect('/campsites');
+});
+
 app.get('/campsites/new', function(req, res) {
   res.render('new');
 });
