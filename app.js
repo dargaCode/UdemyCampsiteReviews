@@ -34,12 +34,12 @@ app.get('/', function(req, res) {
 app.get('/campsites', function(req, res) {
 
   let campsites = [
-    {name:'Campsite1', state: 'state1'},
-    {name:'Campsite2', state: 'state2'},
-    {name:'Campsite3', state: 'state3'},
-    {name:'Campsite4', state: 'state4'},
-    {name:'Campsite5', state: 'state5'},
-    {name:'Campsite6', state: 'state6'}
+    {name:'Campsite1', photo: 'http://www.photosforclass.com/download/10131087094'},
+    {name:'Campsite2', photo: 'http://www.photosforclass.com/download/14435096036'},
+    {name:'Campsite3', photo: 'https://farm9.staticflickr.com/8422/7842069486_c61e4c6025.jpg'},
+    {name:'Campsite4', photo: 'http://www.photosforclass.com/download/1430198323'},
+    {name:'Campsite5', photo: 'https://farm3.staticflickr.com/2245/2150502974_5231368284.jpg'},
+    {name:'Campsite6', photo: 'https://farm3.staticflickr.com/2713/4161240714_a296608148.jpg'}
   ];
 
   res.render('campsites', {

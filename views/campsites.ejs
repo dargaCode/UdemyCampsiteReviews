@@ -3,10 +3,14 @@
 
 <? campsites.forEach(function(site) { ?>
 
-  <li>
-    <?= site.name ?>, located in
-    <strong><?= site.state ?></strong>
-  </li>
+  <div>
+
+    <h4>
+      <?= site.name ?>
+    </h4>
+    <img src="<?= site.photo ?>">
+
+  </div>
 
 <? }); ?>
 
