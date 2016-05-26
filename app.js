@@ -70,9 +70,9 @@ app.get('/campsites/new', function(req, res) {
 
   // Create
 app.post('/campsites', function(req, res) {
-  const requestedBlog = req.body.campsite;
+  const requestedCampsite = req.body.campsite;
 
-  campsites.push(requestedBlog);
+  campsites.push(requestedCampsite);
   res.redirect('/campsites');
 });
 
