@@ -7,12 +7,24 @@ const express = require('express');
 const app = express();
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 // CONSTANTS
 
 const DEFAULT_PORT = 3000;
 const PORT = process.env.PORT || DEFAULT_PORT;
 const SERVER_MSG = `Serving ${pjson.name} on port ${PORT}`;
+const DEFAULT_MONGO_URL = 'mongodb://localhost/campsite_reviews';
+const MONGO_URL = process.env.MONGO_URL || DEFAULT_MONGO_URL;
+
+// MONGOOSE SCHEMAS / MODELS
+
+const CAMPSITE_SCHEMA = new mongoose.Schema({
+  name: String,
+  imageUrl: String
+});
+
+const Campsite = mongoose.model('campsite', CAMPSITE_SCHEMA);
 
 // SETTINGS
 
