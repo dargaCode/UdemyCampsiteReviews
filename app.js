@@ -36,15 +36,6 @@ mongoose.connect(MONGO_URL);
 
 // VARIABLES
 
-let campsites = [
-  {name:'Campsite1', imageURL: 'https://farm3.staticflickr.com/2259/2182093741_164dc44a24.jpg'},
-  {name:'Campsite2', imageURL: 'https://farm2.staticflickr.com/1086/882244782_d067df2717.jpg'},
-  {name:'Campsite3', imageURL: 'https://farm8.staticflickr.com/7439/10131284273_c1728fb490.jpg'},
-  {name:'Campsite4', imageURL: 'https://farm4.staticflickr.com/3273/2602356334_20fbb23543.jpg'},
-  {name:'Campsite5', imageURL: 'https://farm1.staticflickr.com/112/316612921_f23683ca9d.jpg'},
-  {name:'Campsite6', imageURL: 'https://farm3.staticflickr.com/2713/4161240714_a296608148.jpg'}
-];
-
 //SERVER
 
 app.listen(PORT, function() {
@@ -59,8 +50,12 @@ app.get('/', function(req, res) {
 
   // Index
 app.get('/campsites', function(req, res) {
-  res.render('campsites', {
-    campsites: campsites
+  Campsite.find({}, function(err, foundCampsites) {
+    if (err) {
+      console.log('ERROR:', err);
+    } else {
+      res.render('index', {campsites: foundCampsites});
+    }
   });
 });
 
@@ -73,8 +68,14 @@ app.get('/campsites/new', function(req, res) {
 app.post('/campsites', function(req, res) {
   const requestedCampsite = req.body.campsite;
 
-  campsites.push(requestedCampsite);
-  res.redirect('/campsites');
+  Campsite.create(requestedCampsite, function(err, createdCampsite) {
+    if (err) {
+      console.log('ERROR:', err);
+      res.redirect('/campsites/new');
+    } else {
+      res.redirect('/campsites');
+    }
+  });
 });
 
   // Show
