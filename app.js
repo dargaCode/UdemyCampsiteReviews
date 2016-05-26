@@ -2,10 +2,17 @@
 
 // DEPENDENCIES
 
+const pjson = require('./package.json');
 const express = require('express');
 const app = express();
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
+
+// CONSTANTS
+
+const DEFAULT_PORT = 3000;
+const PORT = process.env.PORT || DEFAULT_PORT;
+const SERVER_MSG = `Serving ${pjson.name} on port ${PORT}`;
 
 // SETTINGS
 
@@ -13,11 +20,6 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 ejs.delimiter = '?';
-
-// CONSTANTS
-
-const PORT_NUM = 3000;
-const SERVER_START_MSG = 'Serving Campsite Reviews on port ' + PORT_NUM;
 
 // VARIABLES
 
@@ -32,8 +34,8 @@ let campsites = [
 
 //SERVER
 
-app.listen(process.env.PORT || PORT_NUM, function() {
-  console.log(SERVER_START_MSG);
+app.listen(PORT, function() {
+  console.log(SERVER_MSG);
 });
 
 // ROUTES
@@ -61,3 +63,7 @@ app.post('/campsites', function(req, res) {
 app.get('/campsites/new', function(req, res) {
   res.render('new');
 });
+
+// FUNCTIONS
+
+// MAIN
