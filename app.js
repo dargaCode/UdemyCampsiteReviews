@@ -63,12 +63,9 @@ app.get('/campsites', function(req, res) {
 });
 
 app.post('/campsites', function(req, res) {
-  const name = req.body.name;
-  const imageURL = req.body.imageURL;
-  campsites.push({
-    name: name,
-    imageURL: imageURL
-  });
+  const requestedBlog = req.body.campsite;
+
+  campsites.push(requestedBlog);
   res.redirect('/campsites');
 });
 
