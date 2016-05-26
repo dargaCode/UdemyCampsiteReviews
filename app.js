@@ -56,12 +56,19 @@ app.get('/', function(req, res) {
   res.render('landing');
 });
 
+  // Index
 app.get('/campsites', function(req, res) {
   res.render('campsites', {
     campsites: campsites
   });
 });
 
+  // New
+app.get('/campsites/new', function(req, res) {
+  res.render('new');
+});
+
+  // Create
 app.post('/campsites', function(req, res) {
   const requestedBlog = req.body.campsite;
 
@@ -69,9 +76,13 @@ app.post('/campsites', function(req, res) {
   res.redirect('/campsites');
 });
 
-app.get('/campsites/new', function(req, res) {
-  res.render('new');
-});
+  // Show
+
+  // Edit
+
+  // Update
+
+  // Destroy
 
 // FUNCTIONS
 
