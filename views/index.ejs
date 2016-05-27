@@ -19,13 +19,17 @@
 
   <div class="row" style="display: flex; flex-wrap: wrap;">
     <? campsites.forEach(function(site) { ?>
+
+      <? const siteUrl = '/campsites/' + site._id ?>
+
       <div class="col-md-4 col-sm-6 center-block">
-        <div class="thumbnail">
+        <a href="<?= siteUrl ?>" class="thumbnail">
           <img src="<?= site.imageUrl ?>">
           <div class="caption">
             <h4><?= site.name ?></h4>
+            <p><?= siteUrl ?></p>
           </div>
-        </div>
+        </a>
       </div>
     <? }); ?>
   </div>

@@ -79,6 +79,18 @@ app.post('/campsites', function(req, res) {
 });
 
   // Show
+app.get('/campsites/:id', function(req, res) {
+  const id = req.params.id;
+
+  Campsite.findById(id, function(err, foundCampsite) {
+    if (err) {
+      console.log('ERROR:', err);
+      res.redirect('/campsites/');
+    } else {
+      res.render('show', {site: foundCampsite});
+    }
+  });
+});
 
   // Edit
 
