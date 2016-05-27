@@ -21,7 +21,8 @@ const MONGO_URL = process.env.MONGO_URL || DEFAULT_MONGO_URL;
 
 const CAMPSITE_SCHEMA = new mongoose.Schema({
   name: String,
-  imageUrl: String
+  imageUrl: String,
+  description: String
 });
 
 const Campsite = mongoose.model('campsite', CAMPSITE_SCHEMA);
