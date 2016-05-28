@@ -16,6 +16,7 @@ const Campsite = require('./models/campsite.js');
 // OTHER LOCAL SCRIPTS
 
 const pjson = require('./package.json');
+const seedDatabase = require('./seedDatabase.js');
 
 // CONSTANTS
 
