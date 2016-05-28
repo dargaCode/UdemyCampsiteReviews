@@ -55,6 +55,7 @@ function removeAllCampsites() {
       console.log('ERROR:', err);
     } else {
       console.log(EMPTY_DB_MSG);
+      addDummyCampsites();
     }
   });
 }
@@ -75,7 +76,6 @@ function addDummyCampsites() {
 
 function seedDatabase() {
   removeAllCampsites();
-  addDummyCampsites();
 };
 
 module.exports = seedDatabase;
