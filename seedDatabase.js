@@ -50,8 +50,6 @@ const DUMMY_CAMPSITES = [
 // FUNCTIONS
 
 function removeAllCampsites() {
-  let errCount = 0;
-
   Campsite.remove({}, function(err) {
     if (err) {
       console.log('ERROR:', err);
@@ -59,15 +57,10 @@ function removeAllCampsites() {
       console.log(EMPTY_DB_MSG);
     }
   });
-
-  if (!errCount) {
-
-  }
 }
 
 function addDummyCampsites() {
   DUMMY_CAMPSITES.forEach(function(campsite) {
-
     Campsite.create(campsite, function(err, createdCampsite) {
       if (err) {
         console.log('ERROR:', err);
