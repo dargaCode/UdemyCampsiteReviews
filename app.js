@@ -1,10 +1,6 @@
 
 'use strict'; // so 'let' will work
 
-// DEPENDENCIES - PACKAGE INFO
-
-const pjson = require('./package.json');
-
 // DEPENDENCIES - NPM PACKAGES
 
 const express = require('express');
@@ -16,6 +12,10 @@ const mongoose = require('mongoose');
 // DEPENDENCIES - DATABASE MODELS
 
 const Campsite = require('./models/campsite.js');
+
+// DEPENDENCIES - OTHER LOCAL SCRIPTS
+
+const pjson = require('./package.json');
 
 // CONSTANTS
 
