@@ -93,14 +93,17 @@ app.get('/campsites/:id', function(req, res) {
 
 // FUNCTIONS
 
+function initialize() {
+  app.listen(PORT, function() {
+    console.log(SERVER_MSG);
+  });
+
+  mongoose.connect(DATABASE_URL, function() {
+    console.log(DATABASE_MSG)
+  });
+}
+
 // MAIN
 
- //Start Server
-app.listen(PORT, function() {
-  console.log(SERVER_MSG);
-});
-
- //Start Mongo
-mongoose.connect(DATABASE_URL, function() {
-  console.log(DATABASE_MSG)
-});
+initialize();
+seedDatabase();
