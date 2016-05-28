@@ -1,7 +1,7 @@
 
 'use strict'; // so 'let' will work
 
-// DEPENDENCIES - NPM PACKAGES
+// DEPENDENCIES
 
 const express = require('express');
 const app = express();
@@ -9,11 +9,11 @@ const ejs = require('ejs');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-// DEPENDENCIES - DATABASE MODELS
+// DATABASE MODELS
 
 const Campsite = require('./models/campsite.js');
 
-// DEPENDENCIES - OTHER LOCAL SCRIPTS
+// OTHER LOCAL SCRIPTS
 
 const pjson = require('./package.json');
 
