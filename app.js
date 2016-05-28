@@ -1,15 +1,19 @@
-'use strict'; // so let will work
 
-// DEPENDENCIES
+'use strict'; // so 'let' will work
+
+// DEPENDENCIES - PACKAGE INFO
 
 const pjson = require('./package.json');
+
+// DEPENDENCIES - NPM PACKAGES
+
 const express = require('express');
 const app = express();
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-// MODELS
+// DEPENDENCIES - DATABASE MODELS
 
 const Campsite = require('./models/campsite.js');
 
@@ -18,8 +22,9 @@ const Campsite = require('./models/campsite.js');
 const DEFAULT_PORT = 3000;
 const PORT = process.env.PORT || DEFAULT_PORT;
 const SERVER_MSG = `Serving ${pjson.name} on port ${PORT}`;
-const DEFAULT_MONGO_URL = 'mongodb://localhost/campsite_reviews';
-const MONGO_URL = process.env.MONGO_URL || DEFAULT_MONGO_URL;
+const DEFAULT_DATABASE_URL = 'mongodb://localhost/campsite_reviews';
+const DATABASE_URL = process.env.DATABASE_URL || DEFAULT_DATABASE_URL;
+const DATABASE_MSG = `Connecting to database at ${DATABASE_URL}`;
 
 // SETTINGS
 
@@ -27,15 +32,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 ejs.delimiter = '?';
-mongoose.connect(MONGO_URL);
 
 // VARIABLES
-
-//SERVER
-
-app.listen(PORT, function() {
-  console.log(SERVER_MSG);
-});
 
 // ROUTES
 
@@ -43,7 +41,7 @@ app.get('/', function(req, res) {
   res.render('landing');
 });
 
-  // Index
+  //Route - Index
 app.get('/campsites', function(req, res) {
   Campsite.find({}, function(err, foundCampsites) {
     if (err) {
@@ -54,12 +52,12 @@ app.get('/campsites', function(req, res) {
   });
 });
 
-  // New
+  //Route - New
 app.get('/campsites/new', function(req, res) {
   res.render('new');
 });
 
-  // Create
+  //Route - Create
 app.post('/campsites', function(req, res) {
   const requestedCampsite = req.body.campsite;
 
@@ -73,7 +71,7 @@ app.post('/campsites', function(req, res) {
   });
 });
 
-  // Show
+  //Route - Show
 app.get('/campsites/:id', function(req, res) {
   const id = req.params.id;
 
@@ -87,12 +85,22 @@ app.get('/campsites/:id', function(req, res) {
   });
 });
 
-  // Edit
+  //Route - Edit
 
-  // Update
+  //Route - Update
 
-  // Destroy
+  //Route - Destroy
 
 // FUNCTIONS
 
 // MAIN
+
+ //Start Server
+app.listen(PORT, function() {
+  console.log(SERVER_MSG);
+});
+
+ //Start Mongo
+mongoose.connect(DATABASE_URL, function() {
+  console.log(DATABASE_MSG)
+});
