@@ -1,7 +1,7 @@
 
 <? include ../partials/header ?>
 
-<? const campsiteUrl = '/campsites/' + campsite._id; ?>
+<? const campsitePath = '/campsites/' + campsite._id; ?>
 
 <h2><?= campsite.name ?></h2>
 
@@ -16,6 +16,6 @@
   </p>
 <? }); ?>
 
-<a href="<?= campsiteUrl ?>/comments/new">Create Comment</a>
+<a href="<?= campsitePath ?>/comments/new">Create Comment</a>
 
 <? include ../partials/footer ?>

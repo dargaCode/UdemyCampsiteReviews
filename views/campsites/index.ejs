@@ -20,14 +20,14 @@
   <div class="row" style="display: flex; flex-wrap: wrap;">
     <? campsites.forEach(function(campsite) { ?>
 
-      <? const campsiteUrl = '/campsites/' + campsite._id ?>
+      <? const campsitePath = '/campsites/' + campsite._id ?>
 
       <div class="col-md-4 col-sm-6 center-block">
-        <a href="<?= campsiteUrl ?>" class="thumbnail">
+        <a href="<?= campsitePath ?>" class="thumbnail">
           <img src="<?= campsite.imageUrl ?>">
           <div class="caption">
             <h4><?= campsite.name ?></h4>
-            <p><?= campsiteUrl ?></p>
+            <p><?= campsitePath ?></p>
           </div>
         </a>
       </div>
