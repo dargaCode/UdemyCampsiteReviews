@@ -36,11 +36,13 @@ ejs.delimiter = '?';
 
 // VARIABLES
 
-// ROUTES
+// ROUTES = ROOT
 
 app.get('/', function(req, res) {
   res.render('landing');
 });
+
+// ROUTES - CAMPSITES
 
   //Route - Index
 app.get('/campsites', function(req, res) {
@@ -48,14 +50,14 @@ app.get('/campsites', function(req, res) {
     if (err) {
       console.log('ERROR:', err);
     } else {
-      res.render('index', {campsites: foundCampsites});
+      res.render('campsites/index', {campsites: foundCampsites});
     }
   });
 });
 
   //Route - New
 app.get('/campsites/new', function(req, res) {
-  res.render('new');
+  res.render('campsites/new');
 });
 
   //Route - Create
@@ -84,7 +86,7 @@ app.get('/campsites/:id', function(req, res) {
         console.log('ERROR:', err);
         res.redirect('/campsites/');
       } else {
-        res.render('show', {site: foundCampsite});
+        res.render('campsites/show', {site: foundCampsite});
       }
     });
 });

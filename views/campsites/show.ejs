@@ -1,5 +1,7 @@
 
-<? include partials/header ?>
+<? include ../partials/header ?>
+
+<? const siteUrl = '/campsites/' + site._id; ?>
 
 <h2><?= site.name ?></h2>
 
@@ -14,4 +16,6 @@
   </p>
 <? }); ?>
 
-<? include partials/footer ?>
+<a href="<?= siteUrl ?>/comments/new">Create Comment</a>
+
+<? include ../partials/footer ?>
