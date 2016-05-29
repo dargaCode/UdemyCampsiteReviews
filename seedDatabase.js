@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 
 // DATABASE MODELS
 
-const Campsite = require('./models/campsite');
+const Campsite = require('./models/campsite.js');
 const Comment = require('./models/comment.js');
 
 // NODE MODULES
