@@ -12,6 +12,7 @@ const mongoose = require('mongoose');
 // DATABASE MODELS
 
 const Campsite = require('./models/campsite.js');
+const Comment = require('./models/comment.js');
 
 // OTHER LOCAL SCRIPTS
 
@@ -108,6 +109,30 @@ app.get('/campsites/:id/comments/new', function(req, res) {
       console.log('ERROR:', err);
     } else {
       res.render('comments/new', {site: foundCampsite});
+    }
+  });
+});
+
+  //Create Comment Route
+app.post('/campsites/:id/comments', function(req, res) {
+  const campsiteId = req.params.id;
+  const requestedComment = req.body.comment;
+
+  Campsite.findById(campsiteId, function(err, foundCampsite) {
+    if (err) {
+      console.log('ERROR:', err);
+      res.redirect('/campsites');
+    } else {
+      Comment.create(requestedComment, function(err, createdComment) {
+        if (err) {
+          console.log('ERROR:', err);
+          res.redirect('/campsites/' + campsiteId);
+        } else {
+          foundCampsite.comments.push(createdComment);
+          foundCampsite.save();
+          res.redirect('/campsites/' + campsiteId);
+        }
+      });
     }
   });
 });
