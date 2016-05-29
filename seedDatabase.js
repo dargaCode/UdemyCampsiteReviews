@@ -64,7 +64,7 @@ function removeAllCampsites() {
       addDummyCampsites();
     }
   });
-}
+};
 
 function addDummyCampsites() {
   DUMMY_CAMPSITES.forEach(function(campsite) {
@@ -77,7 +77,7 @@ function addDummyCampsites() {
       }
     });
   });
-}
+};
 
 function addDummyComment(campsite) {
   Comment.create(DUMMY_COMMENT, function(err, createdComment) {
@@ -89,7 +89,7 @@ function addDummyComment(campsite) {
       console.log(SEED_COMMENT_MSG + createdComment.author);
     }
   });
-}
+};
 
 // MAIN
 

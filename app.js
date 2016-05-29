@@ -44,7 +44,7 @@ app.get('/', function(req, res) {
 
 // ROUTES - CAMPSITES
 
-  //Route - Index
+  //Index Campsite Route
 app.get('/campsites', function(req, res) {
   Campsite.find({}, function(err, foundCampsites) {
     if (err) {
@@ -55,12 +55,12 @@ app.get('/campsites', function(req, res) {
   });
 });
 
-  //Route - New
+  //New Campsite Route
 app.get('/campsites/new', function(req, res) {
   res.render('campsites/new');
 });
 
-  //Route - Create
+  //Create Campsite Route
 app.post('/campsites', function(req, res) {
   const requestedCampsite = req.body.campsite;
 
@@ -74,7 +74,7 @@ app.post('/campsites', function(req, res) {
   });
 });
 
-  //Route - Show
+  //Show Campsite Route
 app.get('/campsites/:id', function(req, res) {
   const id = req.params.id;
 
@@ -91,15 +91,15 @@ app.get('/campsites/:id', function(req, res) {
     });
 });
 
-  //Route - Edit
+  //Edit Campsite Route
 
-  //Route - Update
+  //Update Campsite Route
 
-  //Route - Destroy
+  //Destroy Campsite Route
 
 // ROUTES - COMMENTS
 
-  //Route - New
+  //New Comment Route
 app.get('/campsites/:id/comments/new', function(req, res) {
   const id = req.params.id;
 
@@ -120,9 +120,9 @@ function initialize() {
   });
 
   mongoose.connect(DATABASE_URL, function() {
-    console.log(DATABASE_MSG)
+    console.log(DATABASE_MSG);
   });
-}
+};
 
 // MAIN
 
