@@ -18,16 +18,16 @@
   </div>
 
   <div class="row" style="display: flex; flex-wrap: wrap;">
-    <? campsites.forEach(function(site) { ?>
+    <? campsites.forEach(function(campsite) { ?>
 
-      <? const siteUrl = '/campsites/' + site._id ?>
+      <? const campsiteUrl = '/campsites/' + campsite._id ?>
 
       <div class="col-md-4 col-sm-6 center-block">
-        <a href="<?= siteUrl ?>" class="thumbnail">
-          <img src="<?= site.imageUrl ?>">
+        <a href="<?= campsiteUrl ?>" class="thumbnail">
+          <img src="<?= campsite.imageUrl ?>">
           <div class="caption">
-            <h4><?= site.name ?></h4>
-            <p><?= siteUrl ?></p>
+            <h4><?= campsite.name ?></h4>
+            <p><?= campsiteUrl ?></p>
           </div>
         </a>
       </div>

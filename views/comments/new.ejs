@@ -1,15 +1,15 @@
 
 <? include ../partials/header ?>
 
-<? const siteUrl = '/campsites/' + site._id; ?>
+<? const campsiteUrl = '/campsites/' + campsite._id; ?>
 
 <div class="container">
   <div class="row">
 
-    <h1 class="text-center">Add Comment to <?= site.name ?></h1>
+    <h1 class="text-center">Add Comment to <?= campsite.name ?></h1>
 
     <div class="center-block" style="max-width: 300px; margin-top: 25px;">
-      <form action="<?= siteUrl ?>/comments" method="POST">
+      <form action="<?= campsiteUrl ?>/comments" method="POST">
 
         <div class="form-group">
           <input class="form-control" type="text" name="comment[author]" placeholder="Author Name"></input>
@@ -24,7 +24,7 @@
         </div>
 
       </form>
-      <a href="<?= siteUrl ?>">Back</a>
+      <a href="<?= campsiteUrl ?>">Back</a>
     </div>
 
   </div>

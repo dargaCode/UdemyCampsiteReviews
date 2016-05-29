@@ -1,21 +1,21 @@
 
 <? include ../partials/header ?>
 
-<? const siteUrl = '/campsites/' + site._id; ?>
+<? const campsiteUrl = '/campsites/' + campsite._id; ?>
 
-<h2><?= site.name ?></h2>
+<h2><?= campsite.name ?></h2>
 
-<img src="<?= site.imageUrl ?>">
+<img src="<?= campsite.imageUrl ?>">
 
-<p><?= site.description ?></p>
+<p><?= campsite.description ?></p>
 
-<? site.comments.forEach(function (comment) { ?>
+<? campsite.comments.forEach(function (comment) { ?>
   <p>
     <strong><?= comment.author ?></strong>
      - <?= comment.text ?>
   </p>
 <? }); ?>
 
-<a href="<?= siteUrl ?>/comments/new">Create Comment</a>
+<a href="<?= campsiteUrl ?>/comments/new">Create Comment</a>
 
 <? include ../partials/footer ?>

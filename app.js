@@ -87,7 +87,7 @@ app.get('/campsites/:id', function(req, res) {
         console.log('ERROR:', err);
         res.redirect('/campsites/');
       } else {
-        res.render('campsites/show', {site: foundCampsite});
+        res.render('campsites/show', {campsite: foundCampsite});
       }
     });
 });
@@ -108,7 +108,7 @@ app.get('/campsites/:id/comments/new', function(req, res) {
     if (err) {
       console.log('ERROR:', err);
     } else {
-      res.render('comments/new', {site: foundCampsite});
+      res.render('comments/new', {campsite: foundCampsite});
     }
   });
 });
