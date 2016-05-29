@@ -1,9 +1,11 @@
 
+'use strict'; //so 'let' will work
+
 // DEPENDENCIES
 
 const mongoose = require('mongoose');
 
-// DB MODEL
+// SCHEMA & MODEL
 
 const CAMPSITE_SCHEMA = new mongoose.Schema({
   name: String,
@@ -18,5 +20,7 @@ const CAMPSITE_SCHEMA = new mongoose.Schema({
 });
 
 const Campsite = mongoose.model('campsite', CAMPSITE_SCHEMA);
+
+// EXPORT
 
 module.exports = Campsite;
