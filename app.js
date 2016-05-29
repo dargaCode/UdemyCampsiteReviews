@@ -77,10 +77,10 @@ app.post('/campsites', function(req, res) {
 
   //Show Campsite Route
 app.get('/campsites/:id', function(req, res) {
-  const id = req.params.id;
+  const campsiteId = req.params.id;
 
   Campsite
-    .findById(id)
+    .findById(campsiteId)
     .populate('comments')
     .exec(function(err, foundCampsite) {
       if (err) {
@@ -102,9 +102,9 @@ app.get('/campsites/:id', function(req, res) {
 
   //New Comment Route
 app.get('/campsites/:id/comments/new', function(req, res) {
-  const id = req.params.id;
+  const campsiteId = req.params.id;
 
-  Campsite.findById(id, function(err, foundCampsite) {
+  Campsite.findById(campsiteId, function(err, foundCampsite) {
     if (err) {
       console.log('ERROR:', err);
     } else {
