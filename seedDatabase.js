@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 // DATABASE MODELS
 
 const Campsite = require('./models/campsite');
+const Comment = require('./models/comment.js');
 
 // NODE MODULES
 
@@ -19,6 +20,7 @@ const FILENAME = path.basename(__filename);
 const FILENAME_MSG_PREFIX = `* ${FILENAME} - `;
 const EMPTY_DB_MSG = `${FILENAME_MSG_PREFIX}Removed all entries from database`;
 const SEED_CAMPSITE_MSG = `${FILENAME_MSG_PREFIX}Created dummmy campsite - `;
+const SEED_COMMENT_MSG = `${FILENAME_MSG_PREFIX}Created dummmy comment - `;
 const DUMMY_CAMPSITES = [
   {
     name:'Dummy Campsite 1',
@@ -46,6 +48,10 @@ const DUMMY_CAMPSITES = [
     description: 'This is the description of Dummy Campsite 5',
   },
 ];
+const DUMMY_COMMENT = {
+  author: 'Dummy Author',
+  text: 'Dummy comment text',
+};
 
 // FUNCTIONS
 
@@ -67,8 +73,21 @@ function addDummyCampsites() {
         console.log('ERROR:', err);
       } else {
         console.log(SEED_CAMPSITE_MSG + createdCampsite.name);
+        addDummyComment(createdCampsite);
       }
     });
+  });
+}
+
+function addDummyComment(campsite) {
+  Comment.create(DUMMY_COMMENT, function(err, createdComment) {
+    if (err) {
+      console.log('ERROR:', err);
+    } else {
+      campsite.comments.push(createdComment);
+      campsite.save();
+      console.log(SEED_COMMENT_MSG + createdComment.author);
+    }
   });
 }
 
