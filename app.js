@@ -1,5 +1,5 @@
 
-'use strict'; // so 'let' will work
+'use strict'; //so 'let' will work
 
 // DEPENDENCIES
 
