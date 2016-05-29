@@ -97,6 +97,21 @@ app.get('/campsites/:id', function(req, res) {
 
   //Route - Destroy
 
+// ROUTES - COMMENTS
+
+  //Route - New
+app.get('/campsites/:id/comments/new', function(req, res) {
+  const id = req.params.id;
+
+  Campsite.findById(id, function(err, foundCampsite) {
+    if (err) {
+      console.log('ERROR:', err);
+    } else {
+      res.render('comments/new', {site: foundCampsite});
+    }
+  });
+});
+
 // FUNCTIONS
 
 function initialize() {
