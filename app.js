@@ -152,4 +152,4 @@ function initialize() {
 // MAIN
 
 initialize();
-seedDatabase();
+// seedDatabase();
