@@ -1,2 +1,33 @@
 
-<h2>Add new comment to campsite <?= site.name ?></h2>
+<? include ../partials/header ?>
+
+<? const siteUrl = '/campsites/' + site._id; ?>
+
+<div class="container">
+  <div class="row">
+
+    <h1 class="text-center">Add Comment to <?= site.name ?></h1>
+
+    <div class="center-block" style="max-width: 300px; margin-top: 25px;">
+      <form action="<?= siteUrl ?>/comments" method="POST">
+
+        <div class="form-group">
+          <input class="form-control" type="text" name="comment[author]" placeholder="Author Name"></input>
+        </div>
+
+        <div class="form-group">
+          <textarea class="form-control" name="comment[text]" placeholder="Comment Text"></textarea>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-primary btn-lg btn-block">Submit</button>
+        </div>
+
+      </form>
+      <a href="<?= siteUrl ?>">Back</a>
+    </div>
+
+  </div>
+</div>
+
+<? include ../partials/footer ?>
