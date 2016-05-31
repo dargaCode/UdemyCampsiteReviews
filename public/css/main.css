@@ -1,0 +1,19 @@
+
+/*GLOBAL*/
+
+/*THUMBNAIL*/
+
+.thumbnail {
+  padding: 0;
+}
+
+.thumbnail img {
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.thumbnail .caption-full,
+.thumbnail .caption {
+  padding: 9px;
+}
