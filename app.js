@@ -21,6 +21,7 @@ const seedDatabase = require('./seedDatabase.js');
 
 // CONSTANTS
 
+const PUBLIC_PATH = `${__dirname}/public`;
 const DEFAULT_PORT = 3000;
 const PORT = process.env.PORT || DEFAULT_PORT;
 const SERVER_MSG = `Serving ${pjson.name} on port ${PORT}`;
@@ -28,10 +29,11 @@ const DEFAULT_DATABASE_URL = 'mongodb://localhost/campsite_reviews';
 const DATABASE_URL = process.env.DATABASE_URL || DEFAULT_DATABASE_URL;
 const DATABASE_MSG = `Connecting to database at ${DATABASE_URL}`;
 
+
 // SETTINGS
 
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.use(express.static(PUBLIC_PATH));
 app.use(bodyParser.urlencoded({extended: true}));
 ejs.delimiter = '?';
 
