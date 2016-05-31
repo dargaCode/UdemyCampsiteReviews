@@ -21,31 +21,32 @@ const FILENAME_MSG_PREFIX = `* ${FILENAME} - `;
 const EMPTY_DB_MSG = `${FILENAME_MSG_PREFIX}Removed all entries from database`;
 const SEED_CAMPSITE_MSG = `${FILENAME_MSG_PREFIX}Created dummmy campsite - `;
 const SEED_COMMENT_MSG = `${FILENAME_MSG_PREFIX}Created dummmy comment - `;
+const LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim fringilla mollis. Aliquam mollis enim nec sagittis imperdiet. Aenean ut justo id urna rutrum tincidunt. Phasellus blandit, diam vitae lobortis volutpat, urna mi finibus libero, in molestie libero nibh nec nulla. Aliquam interdum lobortis varius. Vivamus porttitor ipsum diam, non sagittis urna volutpat at. Maecenas sodales mi sit amet nulla vestibulum tincidunt. Maecenas risus purus, accumsan vitae suscipit in, venenatis sed nibh.';
 const DUMMY_CAMPSITES = [
   {
     name:'Dummy Campsite 1',
     imageUrl: 'https://farm5.staticflickr.com/4068/4367308345_36f47390e1.jpg',
-    description: 'This is the description of Dummy Campsite 1',
+    description: LOREM_IPSUM,
   },
   {
     name:'Dummy Campsite 2',
     imageUrl: 'https://farm9.staticflickr.com/8322/7887662552_8667d69960.jpg',
-    description: 'This is the description of Dummy Campsite 2',
+    description: LOREM_IPSUM,
   },
   {
     name:'Dummy Campsite 3',
     imageUrl: 'https://farm9.staticflickr.com/8206/8265812638_8100a96382.jpg',
-    description: 'This is the description of Dummy Campsite 3',
+    description: LOREM_IPSUM,
   },
   {
     name:'Dummy Campsite 4',
     imageUrl: 'https://farm8.staticflickr.com/7250/7467209450_a8df729b57.jpg',
-    description: 'This is the description of Dummy Campsite 4',
+    description: LOREM_IPSUM,
   },
   {
     name:'Dummy Campsite 5',
     imageUrl: 'https://farm5.staticflickr.com/4117/4741325076_2d2b5d70dc.jpg',
-    description: 'This is the description of Dummy Campsite 5',
+    description: LOREM_IPSUM,
   },
 ];
 const DUMMY_COMMENT = {
